@@ -13,7 +13,7 @@ syntax on                       " turn syntax highlighting on by default
 set nu
 set smartindent
 set autoindent
-"set tw=80
+set tw=89
 
 " replacing tabs for spaces
 set tabstop=2
@@ -24,3 +24,8 @@ set expandtab
 set splitright
 set splitbelow
 
+" spell checking
+autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
+autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
+autocmd BufNewFile,BufRead *.tex, *.cls set spell spelllang=en_us
+autocmd BufNewFile,BufRead *.txt set spell spelllang=en_us

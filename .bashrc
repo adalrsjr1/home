@@ -125,6 +125,7 @@ fi
 source <(kubectl completion bash)
 source <(minikube completion bash)
 
-export KUBE_CONFIG=/home/adalrsjr1/Code/kubernetes-gfads/admin.conf
+export KUBE_GFADS=/home/adalrsjr1/Code/kubernetes-gfads/admin.conf
 export KUBE_TEST=/home/adalrsjr1/Code/kubernetes-gfads/test-cluster/gfads-test.config
 export KUBE_AZURE=/home/adalrsjr1/Code/ibm-stack/azure/deployment/admin.conf
+export KUBE_KAY=/home/adalrsjr1/Code/ibm-stack/kubernetes-infra/kay.conf
