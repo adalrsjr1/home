@@ -13,14 +13,14 @@ syntax on                       " turn syntax highlighting on by default
 set nu
 set smartindent
 set autoindent
-set tw=89
+set tw=80
 
 " replacing tabs for spaces
 set tabstop=2
 set sw=2
 set expandtab
 
-" spliting
+" splitting
 set splitright
 set splitbelow
 
