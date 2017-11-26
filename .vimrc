@@ -25,7 +25,20 @@ set splitright
 set splitbelow
 
 " spell checking
+set complete+=kspell
 autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
 autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
-autocmd BufNewFile,BufRead *.tex, *.cls set spell spelllang=en_us
+"autocmd BufNewFile,BufRead *.tex, set syntax spell toplevel spelllang=en_us
+autocmd FileType tex set spell spelllang=en_us
 autocmd BufNewFile,BufRead *.txt set spell spelllang=en_us
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+
+set spellfile=~/.vim/spellfile.add
