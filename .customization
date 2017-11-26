@@ -5,6 +5,12 @@ tweak: unity tweak tool
 wallpapers: ln -sf /home/$USER/Dropbox/wallpapers /usr/share/backgrounds
 login-screen: http://zacharykeeton.com/customize-ubuntu-login-screen/
 
+boot color:
+https://askubuntu.com/questions/47488/how-to-change-the-purple-background-color-in-grub
+
+https://ubuntuforums.org/showthread.php?t=2340103
+  than apply sudo update-initramfs -u
+
 cron-weekly: delete download folder
 cron-weekly: auto apt update upgrade autoremove clean 
 
