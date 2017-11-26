@@ -1,0 +1,11 @@
+theme: https://github.com/horst3180/arc-theme
+icons: https://github.com/snwh/paper-icon-theme
+
+tweak: unity tweak tool
+wallpapers: ln -sf /home/$USER/Dropbox/wallpapers /usr/share/backgrounds
+login-screen: http://zacharykeeton.com/customize-ubuntu-login-screen/
+
+cron-weekly: delete download folder
+cron-weekly: auto apt update upgrade autoremove clean 
+
+notes: tomboy
