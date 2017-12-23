@@ -15,6 +15,13 @@ set smartindent
 set autoindent
 set tw=80
 
+" highlight cursor
+set cursorline
+:hi CursorLine   cterm=bold ctermbg=black "ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" \c to locate the cursor
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
 " replacing tabs for spaces
 set tabstop=2
 set sw=2
