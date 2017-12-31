@@ -11,3 +11,4 @@ cron-weekly: delete download folder
 cron-weekly: auto apt update upgrade autoremove clean 
 
 notes: tomboy
+Keepass: ~/Dropbox/Apps/Keepass/keepass.db
