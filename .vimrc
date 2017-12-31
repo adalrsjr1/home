@@ -14,6 +14,7 @@ set nu
 set smartindent
 set autoindent
 set tw=80
+set noswapfile
 
 " highlight cursor
 set cursorline
