@@ -12,3 +12,6 @@ cron-weekly: auto apt update upgrade -y --allow-unauthenticated autoremove clean
 
 notes: tomboy
 Keepass: ~/Dropbox/Apps/Keepass/keepass.db
+
+# tmux.ressurrect
+# see .tmux.conf
