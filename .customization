@@ -8,7 +8,7 @@ login-screen: http://zacharykeeton.com/customize-ubuntu-login-screen/
 boot color: https://ubuntuforums.org/showthread.php?t=2340103
 
 cron-weekly: delete download folder
-cron-weekly: auto apt update upgrade autoremove clean 
+cron-weekly: auto apt update upgrade -y --allow-unauthenticated autoremove clean 
 
 notes: tomboy
 Keepass: ~/Dropbox/Apps/Keepass/keepass.db
