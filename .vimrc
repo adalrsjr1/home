@@ -35,10 +35,10 @@ set splitbelow
 " spell checking
 set complete+=kspell
 autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
-autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
+"autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
 "autocmd BufNewFile,BufRead *.tex, set syntax spell toplevel spelllang=en_us
 autocmd FileType tex set spell spelllang=en_us
-autocmd BufNewFile,BufRead *.txt set spell spelllang=en_us
+autocmd BufNewFile,BufRead *.txt, *.md *.mkd, *.markdown set spell spelllang=en_us
 
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
