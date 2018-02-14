@@ -1,3 +1,5 @@
+set fileencoding=utf8           " set enconding to utf-8
+
 set ai                          " set auto-indenting on for programming
 set showmatch                   " automatically show matching brackets. works like it does in bbedit.
 set vb                          " turn on the "visual bell" - which is much quieter than the "audio blink"
@@ -13,7 +15,7 @@ syntax on                       " turn syntax highlighting on by default
 set nu
 set smartindent
 set autoindent
-set tw=80
+set tw=70
 set noswapfile
 
 " highlight cursor
