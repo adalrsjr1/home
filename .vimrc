@@ -1,4 +1,4 @@
-set fileencoding=utf8           " set enconding to utf-8
+set encoding=utf8           " set enconding to utf-8
 
 set ai                          " set auto-indenting on for programming
 set showmatch                   " automatically show matching brackets. works like it does in bbedit.
@@ -30,6 +30,10 @@ set tabstop=2
 set sw=2
 set expandtab
 
+" enable folding
+set foldmethod=indent
+set foldlevel=99
+
 " splitting
 set splitright
 set splitbelow
@@ -40,7 +44,6 @@ autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
 "autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
 "autocmd BufNewFile,BufRead *.tex, set syntax spell toplevel spelllang=en_us
 autocmd FileType tex set spell spelllang=en_us
-autocmd BufNewFile,BufRead *.txt, *.md *.mkd, *.markdown set spell spelllang=en_us
 
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
@@ -52,3 +55,19 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 set spellfile=~/.vim/spellfile.add
+
+" python configuration
+au BufNewFile,BufRead *.py
+    \ set tabstop=4        |
+    \ set softtabstop=4    |
+    \ set shiftwidth=4     |
+    \ set textwidth=79     |
+    \ set expandtab        |
+    \ set autoindent       |
+    \ set fileformat=unix  |
+
+
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
+
+au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
