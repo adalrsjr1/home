@@ -19,6 +19,7 @@ set smartindent
 set autoindent
 set tw=70
 set noswapfile
+set nobackup
 
 " highlight cursor
 set cursorline
