@@ -1,3 +1,5 @@
+" https://dougblack.io/words/a-good-vimrc.html
+
 set encoding=utf8           " set enconding to utf-8
 
 set ai                          " set auto-indenting on for programming
@@ -8,7 +10,7 @@ set laststatus=2                " make the last line where the status is two lin
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set nocompatible                " vi compatible is LAME
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
-"colorscheme pablo
+colorscheme pablo
 set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 syntax on                       " turn syntax highlighting on by default
@@ -29,9 +31,14 @@ set cursorline
 set tabstop=2
 set sw=2
 set expandtab
+set softtabstop=2
+set shiftwidth=2
 
 " enable folding
+set foldenable
+set foldlevelstart=99
 set foldmethod=indent
+set foldnestmax=10
 set foldlevel=99
 
 " splitting
