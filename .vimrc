@@ -23,7 +23,7 @@ set nobackup
 
 " highlight cursor
 set cursorline
-:hi CursorLine   cterm=bold ctermbg=black "ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorLine cterm=bold ctermbg=white ctermbg=darkgray guibg=darkgray guifg=darkgray
 :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 " \c to locate the cursor
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
