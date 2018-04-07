@@ -75,7 +75,19 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix  |
 
 
+" highlight bad whitspaces
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
-
 au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
+
+" nome through splits
+nnoremap <leader>j <C-w>j
+nnoremap <leader>l <C-w>l
+nnoremap <leader>k <C-w>k
+nnoremap <leader>h <C-w>h
+
+" resize splits
+nnoremap <silent> <C-j> <C-W>-
+nnoremap <silent> <C-k> <C-W>+
+nnoremap <silent> <C-h> <C-W>>
+nnoremap <silent> <C-l> <C-W>< 
