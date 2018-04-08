@@ -75,12 +75,12 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix  |
 
 
-" highlight bad whitspaces
+" highlight bad whitespaces
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
 au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
 
-" nome through splits
+" move through splits
 nnoremap <leader>j <C-w>j
 nnoremap <leader>l <C-w>l
 nnoremap <leader>k <C-w>k
@@ -91,3 +91,10 @@ nnoremap <silent> <C-j> <C-W>-
 nnoremap <silent> <C-k> <C-W>+
 nnoremap <silent> <C-h> <C-W>>
 nnoremap <silent> <C-l> <C-W>< 
+
+" cycle through buffers
+nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
+nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
+
+" mapping make key
+nnoremap <leader>m :w<CR>:make<CR>
