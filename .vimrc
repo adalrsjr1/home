@@ -10,7 +10,7 @@ set laststatus=2                " make the last line where the status is two lin
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set nocompatible                " vi compatible is LAME
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
-colorscheme pablo
+"colorscheme pablo
 set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 syntax on                       " turn syntax highlighting on by default
@@ -74,6 +74,14 @@ au BufNewFile,BufRead *.py
     \ set autoindent       |
     \ set fileformat=unix  |
 
+
+" make configuration
+au BufNewFile,BufRead Makefile
+    \ set tabstop=4        |
+    \ set noexpandtab      |
+    \ set shiftwidth=4     |
+    \ set autoindent       |
+    \ set fileformat=unix  |
 
 " highlight bad whitespaces
 highlight BadWhitespace ctermbg=red guibg=red
