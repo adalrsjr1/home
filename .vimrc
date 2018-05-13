@@ -9,7 +9,7 @@ set ruler                       " show the cursor position all the time
 set laststatus=2                " make the last line where the status is two lines deep so you can see status always
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set nocompatible                " vi compatible is LAME
-set background=dark             " Use colours that work well on a dark background (Console is usually black)
+set background=light             " Use colours that work well on a dark background (Console is usually black)
 "colorscheme pablo
 set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
@@ -23,8 +23,8 @@ set nobackup
 
 " highlight cursor
 set cursorline
-:hi CursorLine cterm=bold ctermbg=white ctermbg=darkgray guibg=darkgray guifg=darkgray
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+":hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorLine cterm=bold "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
 " \c to locate the cursor
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
