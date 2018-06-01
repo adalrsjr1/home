@@ -133,3 +133,7 @@ export KUBE_KAY=/home/adalrsjr1/Code/ibm-stack/kubernetes-infra/kay.conf
 export PATH=$PATH:/opt/android-studio/bin
 
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/adalrsjr1/.sdkman"
+[[ -s "/home/adalrsjr1/.sdkman/bin/sdkman-init.sh" ]] && source "/home/adalrsjr1/.sdkman/bin/sdkman-init.sh"
