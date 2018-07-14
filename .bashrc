@@ -116,6 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PROMPT_COMMAND='history -a'
+
 if [[ ! $TERM =~ screen ]]; then
   exec tmux
 fi

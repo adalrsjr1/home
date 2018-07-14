@@ -1,7 +1,6 @@
 " https://dougblack.io/words/a-good-vimrc.html
 
-set encoding=utf8           " set enconding to utf-8
-
+set encoding=utf8               " set enconding to utf-8
 set ai                          " set auto-indenting on for programming
 set showmatch                   " automatically show matching brackets. works like it does in bbedit.
 set vb                          " turn on the "visual bell" - which is much quieter than the "audio blink"
@@ -9,8 +8,8 @@ set ruler                       " show the cursor position all the time
 set laststatus=2                " make the last line where the status is two lines deep so you can see status always
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set nocompatible                " vi compatible is LAME
-set background=light             " Use colours that work well on a dark background (Console is usually black)
-"colorscheme pablo
+set background=dark             " Use colours that work well on a dark background (Console is usually black)
+colorscheme pablo
 set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 syntax on                       " turn syntax highlighting on by default
@@ -23,7 +22,7 @@ set nobackup
 
 " highlight cursor
 set cursorline
-":hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 :hi CursorLine cterm=bold "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
 " \c to locate the cursor
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
@@ -85,7 +84,8 @@ au BufNewFile,BufRead Makefile
 
 " highlight bad whitespaces
 highlight BadWhitespace ctermbg=red guibg=red
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
+au BufRead,BufNewFile *.* match BadWhitespace /\s\+$\| \+\ze\t/
 au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
 
 " move through splits
@@ -98,7 +98,7 @@ nnoremap <leader>h <C-w>h
 nnoremap <silent> <C-j> <C-W>-
 nnoremap <silent> <C-k> <C-W>+
 nnoremap <silent> <C-h> <C-W>>
-nnoremap <silent> <C-l> <C-W>< 
+nnoremap <silent> <C-l> <C-W><
 
 " cycle through buffers
 nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
@@ -106,3 +106,12 @@ nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
 
 " mapping make key
 nnoremap <leader>m :w<CR>:make<CR>
+
+" mapping save key
+nnoremap <leader>s :w<CR>
+
+" mapping vertical split
+nnoremap <leader>" :vsp<Space>
+
+" mapping horizontal split
+nnoremap <leader>% :sp<Space>
