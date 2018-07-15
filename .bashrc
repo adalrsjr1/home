@@ -124,18 +124,18 @@ fi
 
 # Begin -- Kubernetes Config
 
-source <(kubectl completion bash)
-source <(minikube completion bash)
+#source <(kubectl completion bash)
+#source <(minikube completion bash)
 
-export KUBE_GFADS=/home/adalrsjr1/Code/kubernetes-gfads/admin.conf
-export KUBE_TEST=/home/adalrsjr1/Code/kubernetes-gfads/test-cluster/gfads-test.config
-export KUBE_AZURE=/home/adalrsjr1/Code/ibm-stack/azure/deployment/admin.conf
-export KUBE_KAY=/home/adalrsjr1/Code/ibm-stack/kubernetes-infra/kay.conf
+#export KUBE_GFADS=/home/adalrsjr1/Code/kubernetes-gfads/admin.conf
+#export KUBE_TEST=/home/adalrsjr1/Code/kubernetes-gfads/test-cluster/gfads-test.config
+#export KUBE_AZURE=/home/adalrsjr1/Code/ibm-stack/azure/deployment/admin.conf
+#export KUBE_KAY=/home/adalrsjr1/Code/ibm-stack/kubernetes-infra/kay.conf
 
-export PATH=$PATH:/opt/android-studio/bin
+#export PATH=$PATH:/opt/android-studio/bin
 
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/adalrsjr1/.sdkman"
-[[ -s "/home/adalrsjr1/.sdkman/bin/sdkman-init.sh" ]] && source "/home/adalrsjr1/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/home/adalrsjr1/.sdkman"
+#[[ -s "/home/adalrsjr1/.sdkman/bin/sdkman-init.sh" ]] && source "/home/adalrsjr1/.sdkman/bin/sdkman-init.sh"
