@@ -34,7 +34,7 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 
-" enable folding
+" enable folding za
 set foldenable
 set foldlevelstart=99
 set foldmethod=indent
@@ -101,8 +101,8 @@ nnoremap <silent> <C-h> <C-W>>
 nnoremap <silent> <C-l> <C-W><
 
 " cycle through buffers
-nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
-nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
+nnoremap <leader>n :bnext<CR>:redraw<CR>:ls<CR>
+nnoremap <leader>p :bprevious<CR>:redraw<CR>:ls<CR>
 
 " mapping make key
 nnoremap <leader>m :w<CR>:make<CR>
@@ -115,3 +115,23 @@ nnoremap <leader>" :vsp<Space>
 
 " mapping horizontal split
 nnoremap <leader>% :sp<Space>
+
+" open explorer
+nnoremap <leader>e :Vexplore<CR>
+
+" close tab
+nnoremap <leader>q :q<CR>
+
+" save tab
+nnoremap <leader>s :w<CR>
+
+" http://ctrlpvim.github.io/ctrlp.vim/#installation
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1 " show hidden files
+let g:ctrlp_root_markers = ['pom.xml']
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|pdf|png|jpg|jpeg|zip|bz2|gz|jar|rar|7z)$',
+  \ }
