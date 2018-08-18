@@ -115,3 +115,15 @@ nnoremap <leader>" :vsp<Space>
 
 " mapping horizontal split
 nnoremap <leader>% :sp<Space>
+
+" https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+" mapping clipboard copy/paste
+" first check it vim supports clipboard
+"   :echo has('clipboard')
+" if 0, install vim-gnome or vim-gtk
+nnoremap <leader>yy "*y
+nnoremap <leader>pp "*p
+nnoremap <leader>PP "*P
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P"
