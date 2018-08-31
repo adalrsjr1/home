@@ -124,7 +124,8 @@ fi
 
 # Begin -- Kubernetes Config
 
-#source <(kubectl completion bash)
+
+source <(kubectl completion bash)
 #source <(minikube completion bash)
 
 #export KUBE_GFADS=/home/adalrsjr1/Code/kubernetes-gfads/admin.conf
@@ -133,7 +134,7 @@ fi
 #export KUBE_KAY=/home/adalrsjr1/Code/ibm-stack/kubernetes-infra/kay.conf
 
 #export PATH=$PATH:/opt/android-studio/bin
-
+export PATH=$PATH:/home/$USER/.local/bin/
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
