@@ -122,6 +122,9 @@ if [[ ! $TERM =~ screen ]]; then
   exec tmux
 fi
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Begin -- Kubernetes Config
 
 
