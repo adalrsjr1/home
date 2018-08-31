@@ -122,6 +122,9 @@ if [[ ! $TERM =~ screen ]]; then
   exec tmux
 fi
 
+# to avoid VIM hang out after accidentally press CRTL+S
+stty -ixon
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
