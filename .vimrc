@@ -17,6 +17,7 @@ set nu
 set smartindent
 set autoindent
 set tw=70
+set formatoptions-=t            " avoid wrap line while writting
 set noswapfile
 set nobackup
 
