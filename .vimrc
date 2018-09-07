@@ -17,7 +17,7 @@ set nu
 set smartindent
 set autoindent
 set tw=70
-set formatoptions-=t            " avoid wrap line while writting
+"set formatoptions-=t            " avoid wrap line while writing
 set noswapfile
 set nobackup
 
@@ -73,6 +73,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab        |
     \ set autoindent       |
     \ set fileformat=unix  |
+    \ set formatoptions-=t |
 
 
 " make configuration
@@ -82,6 +83,13 @@ au BufNewFile,BufRead Makefile
     \ set shiftwidth=4     |
     \ set autoindent       |
     \ set fileformat=unix  |
+    \ set formatoptions-=t |
+
+" html configuration
+au BufNewFile,BufRead *.html
+    \ set formatoptions-=t |
+    \ set fileformat=unix  |
+    \ map <F2> :0r ~/.vimsnippets/html  <CR> | " http://vim.wikia.com/wiki/Insert_a_file
 
 " highlight bad whitespaces
 highlight BadWhitespace ctermbg=red guibg=red
@@ -122,8 +130,8 @@ nnoremap <leader>% :sp<Space>
 nnoremap <leader>yy "*y
 nnoremap <leader>pp "*p
 nnoremap <leader>PP "*P
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
+nnoremap <leader>y "*y
+nnoremap <leader>p "*p
 nnoremap <leader>P "+P"
 
 " open explorer
