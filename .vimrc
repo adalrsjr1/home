@@ -109,6 +109,12 @@ nnoremap <silent> <C-k> <C-W>+
 nnoremap <silent> <C-h> <C-W>>
 nnoremap <silent> <C-l> <C-W><
 
+" swap splits
+nnoremap <leader>J <C-w>J
+nnoremap <leader>L <C-w>L
+nnoremap <leader>K <C-w>K
+nnoremap <leader>H <C-w>H
+
 " cycle through buffers
 nnoremap <leader>n :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <leader>p :bprevious<CR>:redraw<CR>:ls<CR>
@@ -127,14 +133,14 @@ nnoremap <leader>% :sp<Space>
 " first check it vim supports clipboard
 "   :echo has('clipboard')
 " if 0, install vim-gnome or vim-gtk
-nnoremap <leader>yy "*y
-nnoremap <leader>pp "*p
-nnoremap <leader>PP "*P
-nnoremap <leader>y "*y
-nnoremap <leader>p "*p
-nnoremap <leader>P "+P"
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>Y "*y
+nnoremap <leader>P "*p
+
 
 " open explorer
+nnoremap <leader><TAB> :Texplore<CR>
 nnoremap <leader>e :Vexplore<CR>
 nnoremap <leader>E :Hexplore<CR>
 " close tab
