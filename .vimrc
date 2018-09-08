@@ -116,8 +116,8 @@ nnoremap <leader>K <C-w>K
 nnoremap <leader>H <C-w>H
 
 " cycle through buffers
-nnoremap <leader>n :bnext<CR>:redraw<CR>:ls<CR>
-nnoremap <leader>p :bprevious<CR>:redraw<CR>:ls<CR>
+nnoremap <leader>n :bnext<CR>:redraw<CR>:ls<CR><CR>
+nnoremap <leader>p :bprevious<CR>:redraw<CR>:ls<CR><CR>
 
 " mapping make key
 nnoremap <leader>m :w<CR>:make<CR>
@@ -159,3 +159,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll|pdf|png|jpg|jpeg|zip|bz2|gz|jar|rar|7z)$',
   \ }
+
+" syntax highlight for Vue
+" git clone https://github.com/posva/vim-vue.git ~/.vim/pack/plugins/start/vim-vue
