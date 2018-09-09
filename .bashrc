@@ -128,7 +128,7 @@ stty -ixon
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-function gitignore() { curl -L -s https://www.gitignore.io/api/$@ ;}
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # Begin -- Kubernetes Config
 
 
