@@ -24,8 +24,8 @@ set fileformat=unix
 
 " highlight cursor
 set cursorline
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:hi CursorLine cterm=bold "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=None guibg=darkred guifg=white
+:hi CursorLine cterm=bold ctermbg=None ctermfg=None "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
 " \c to locate the cursor
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
@@ -143,11 +143,20 @@ nnoremap <leader>P "*p
 nnoremap <leader><TAB> :Texplore<CR>
 nnoremap <leader>e :Vexplore<CR>
 nnoremap <leader>E :Hexplore<CR>
-" close tab
-nnoremap <leader>q :q<CR>
 
-" save tab
-nnoremap <leader>s :w<CR>
+" handling tabs
+nnoremap <leader>t <C-w>T               " move widow to tab
+nnoremap <leader><CR> :tabnext<CR>      " go to next tab
+nnoremap <leader><Bs> :tabprevious<CR>  " go to previous tab
+nnoremap <leader>q :q<CR>               " close tab
+nnoremap <leader>s :w<CR>               " save tab
+" open file into new tab
+nnoremap <leader>t :tabedit<Space>
+
+" customizing tabs
+:hi TabLineFill ctermfg=DarkGreen ctermbg=LightGreen
+:hi TabLineSel ctermfg=White ctermbg=LightGreen cterm=bold
+:hi TabLine ctermfg=Black ctermbg=LightGreen cterm=NONE
 
 " http://ctrlpvim.github.io/ctrlp.vim/#installation
 set runtimepath^=~/.vim/bundle/ctrlp.vim
