@@ -164,6 +164,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# append the history of all terminals into a single file
 export PROMPT_COMMAND='history -a'
 
 if [[ ! $TERM =~ screen ]]; then
@@ -173,7 +174,7 @@ fi
 # to avoid VIM hang out after accidentally press CRTL+S
 stty -ixon
 
-export VISUAL=vim
+export VISUAL=vim -R
 export EDITOR="$VISUAL"
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
