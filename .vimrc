@@ -151,7 +151,7 @@ nnoremap <leader><Bs> :tabprevious<CR>  " go to previous tab
 nnoremap <leader>q :q<CR>               " close tab
 nnoremap <leader>s :w<CR>               " save tab
 " open file into new tab
-nnoremap <leader>t :tabedit<Space>
+nnoremap <leader>t :tabedit<Space> %:h/
 
 " customizing tabs
 :hi TabLineFill ctermfg=DarkGreen ctermbg=LightGreen
