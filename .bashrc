@@ -103,7 +103,7 @@ function parse_git_dirty {
 	fi
 }
 
-
+# https://ss64.com/bash/syntax-prompt.html
 if [ "$color_prompt" = yes ]; then
     PS1='\[\033[32m\]\W\[\033[00;39m\] \[\033[95m\]$(parse_git_branch) \[\033[33m\$\[\033[00m\] '
 else
