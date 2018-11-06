@@ -105,9 +105,9 @@ function parse_git_dirty {
 
 # https://ss64.com/bash/syntax-prompt.html
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[32m\]\W\[\033[00;39m\] \[\033[95m\]$(parse_git_branch) \[\033[33m\$\[\033[00m\] '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[32m\]\W\[\033[00;39m\] \[\033[95m\]$(parse_git_branch) \[\033[33m\$\[\033[00m\] '
 else
-    PS1='\W $(parse_git_branch) \$ '
+    PS1='${debian_chroot:+($debian_chroot)}\W $(parse_git_branch) \$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -180,6 +180,8 @@ export EDITOR="$VISUAL"
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # Begin -- Kubernetes Config
 
+alias gpush='git push origin master'
+alias gpull='git pull origin master'
 
 source <(kubectl completion bash)
 #source <(minikube completion bash)
