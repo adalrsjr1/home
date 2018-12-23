@@ -23,3 +23,4 @@ fi
 
 export GOPATH=$HOME/Coding/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=$PATH:/home/adalrsjr1/Coding/istio-1.0.4/bin
