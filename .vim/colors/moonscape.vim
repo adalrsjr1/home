@@ -45,7 +45,7 @@ hi Folded           cterm=NONE      ctermfg=238         ctermbg=NONE
 hi Function         cterm=NONE      ctermfg=251         ctermbg=NONE
 hi Identifier       cterm=bold      ctermfg=66          ctermbg=NONE
 hi Include          cterm=NONE      ctermfg=66          ctermbg=NONE
-hi IncSearch        cterm=NONE      ctermfg=247         ctermbg=247
+hi IncSearch        cterm=inverse      "ctermfg=NONE         ctermbg=247
 hi LineNr           cterm=NONE      ctermfg=59          ctermbg=234
 hi Macro            cterm=NONE      ctermfg=66          ctermbg=NONE
 hi NonText          cterm=NONE      ctermfg=238         ctermbg=NONE

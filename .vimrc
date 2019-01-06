@@ -1,5 +1,6 @@
 " https://dougblack.io/words/a-good-vimrc.html
 
+set nohlsearch
 set encoding=utf8               " set enconding to utf-8
 set ai                          " set auto-indenting on for programming
 set showmatch                   " automatically show matching brackets. works like it does in bbedit.
@@ -25,8 +26,8 @@ set fileformat=unix
 
 " highlight cursor
 set cursorline
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=None guibg=darkred guifg=white
-:hi CursorLine cterm=bold ctermbg=None ctermfg=None "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
+:hi CursorColumn cterm=inverse,bold " ctermbg=darkred ctermfg=None guibg=darkred guifg=white
+:hi CursorLine cterm=bold"ctermbg=None ctermfg=None "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
 " \c to locate the cursor
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
