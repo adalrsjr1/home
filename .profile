@@ -24,4 +24,5 @@ fi
 export GOPATH=$HOME/Coding/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/istio-1.0.5/bin
+export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/istio/bin
+export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/helm

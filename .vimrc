@@ -93,6 +93,10 @@ au BufNewFile,BufRead Makefile
 au BufNewFile,BufRead *.html
     \ map <F2> :0r ~/.vimsnippets/html  <CR> | " http://vim.wikia.com/wiki/Insert_a_file
 
+" python configuration
+au BufNewFile,BufRead **/contests/**/*.py
+    \ map <F2> :0r ~/.vimsnippets/python <CR> |
+
 " highlight bad whitespaces
 highlight BadWhitespace ctermbg=red guibg=red
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
