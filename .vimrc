@@ -98,7 +98,7 @@ au BufNewFile,BufRead **/contests/**/*.py
     \ map <F2> :0r ~/.vimsnippets/python <CR> |
 
 " highlight bad whitespaces
-highlight BadWhitespace ctermbg=red guibg=red
+highlight BadWhitespace cterm=inverse,bold
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
 au BufRead,BufNewFile *.* match BadWhitespace /\s\+$\| \+\ze\t/
 au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
