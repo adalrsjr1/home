@@ -182,7 +182,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 alias gpush='git push origin master'
 alias gpull='git pull origin master'
-
+alias openfile='xdg-open'
 alias container-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 source <(kubectl completion bash)
