@@ -1,0 +1,1 @@
+/home/adalrsjr1/.vimrc

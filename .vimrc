@@ -80,6 +80,10 @@ au BufNewFile,BufRead *.py
     \ set expandtab        |
     \ set autoindent       |
 
+" antlr grammar syntax configuration
+au BufRead,BufNewFile *.g set filetype=antlr3
+au BufRead,BufNewFile *.g4 set filetype=antlr4
+
 
 " make configuration
 au BufNewFile,BufRead Makefile
