@@ -27,3 +27,8 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/istio/bin
 export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/helm
 
+export CLASSPATH=".:$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
+
+alias antlr4="java -jar $HOME/.local/lib/antlr-4.7.2-complete.jar"
+alias grun="java org.antlr.v4.gui.TestRig"
+
