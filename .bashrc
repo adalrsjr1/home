@@ -62,7 +62,7 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		echo "${BRANCH}${STAT}"
 	else
 		echo ""
 	fi
@@ -105,9 +105,9 @@ function parse_git_dirty {
 
 # https://ss64.com/bash/syntax-prompt.html
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[32m\]\W\[\033[00;39m\] \[\033[95m\]$(parse_git_branch) \[\033[33m\$\[\033[00m\] \[$(tput sgr0)\]'
+    PS1='${debian_chroot:+($debian_chroot)}\[$(tput setaf 2)\][\W $(parse_git_branch)]\\$ \[$(tput sgr0)\]'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\W $(parse_git_branch) \$ \[$(tput sgr0)\]'
+    PS1='${debian_chroot:+($debian_chroot)}[\W $(parse_git_branch)]\\$ \[$(tput sgr0)\]'
 fi
 unset color_prompt force_color_prompt
 
