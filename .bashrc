@@ -180,8 +180,8 @@ export EDITOR="$VISUAL"
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # Begin -- Kubernetes Config
 
-alias gpush='git push origin master'
 alias gpull='git pull origin master'
+alias gpush='gpull && git push origin master'
 alias openfile='xdg-open'
 alias container-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
