@@ -206,3 +206,5 @@ if [[ $(ps -p 1 | grep -i systemd) ]]; then
   alias poweroff='sudo systemctl poweroff'
   alias reboot='sudo systemctl reboot'
 fi
+
+alias upgrade='sudo apt update && sudo apt upgrade -y'

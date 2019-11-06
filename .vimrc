@@ -55,6 +55,7 @@ autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
 "autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
 "autocmd BufNewFile,BufRead *.tex, set syntax spell toplevel spelllang=en_us
 autocmd FileType tex set spell spelllang=en_us
+autocmd FileType txt set spell spelllang=en_us
 
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
@@ -107,6 +108,9 @@ highlight BadWhitespace cterm=inverse,bold
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
 au BufRead,BufNewFile *.* match BadWhitespace /\s\+$\| \+\ze\t/
 au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
+
+" insert timestamp
+nnoremap <leader>r :r !date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR><CR>
 
 " move through splits
 nnoremap <leader>j <C-w>j
