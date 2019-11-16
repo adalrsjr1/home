@@ -138,10 +138,10 @@ nnoremap <leader>p :bprevious<CR>:redraw<CR>:ls<CR><CR>
 nnoremap <leader>m :w<CR>:make<CR>
 
 " mapping vertical split
-nnoremap <leader>" :vsp<Space>
+nnoremap <leader>% :vsp<Space>
 
 " mapping horizontal split
-nnoremap <leader>% :sp<Space>
+nnoremap <leader>" :sp<Space>
 
 " https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
 " mapping clipboard copy/paste
