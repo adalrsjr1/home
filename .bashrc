@@ -13,7 +13,7 @@ esac
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
-shopt -s histappend
+#shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -25,7 +25,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -109,7 +109,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}[\W $(parse_git_branch)]\\$ \[$(tput sgr0)\]'
 fi
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -132,6 +132,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+alias ls='ls -G'
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -156,13 +157,13 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+#if ! shopt -oq posix; then
+#  if [ -f /usr/share/bash-completion/bash_completion ]; then
+#    . /usr/share/bash-completion/bash_completion
+#  elif [ -f /etc/bash_completion ]; then
+#    . /etc/bash_completion
+#  fi
+#fi
 
 # append the history of all terminals into a single file
 export PROMPT_COMMAND='history -a'
@@ -178,16 +179,6 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-# Begin -- Kubernetes Config
-
-alias gpull='git pull origin master'
-alias gpush='gpull && git push origin master'
-alias openfile='xdg-open'
-alias container-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
-
-source <(kubectl completion bash)
-
-export PATH=$PATH:/home/$USER/.local/bin/
 
 # Check SDKMAN installation
 if [ ! -d $HOME/.sdkman ]; then
@@ -201,10 +192,6 @@ LS_COLORS='rs=0:di=00;34:ln=00;36:mh=00:pi=40;33:so=00;35:do=00;35:bd=40;33;01:c
 export LS_COLORS
 export LC_NUMERIC="en_US.UTF-8"
 
-
-if [[ $(ps -p 1 | grep -i systemd) ]]; then
-  alias poweroff='sudo systemctl poweroff'
-  alias reboot='sudo systemctl reboot'
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
-
-alias upgrade='sudo apt update && sudo apt upgrade -y'

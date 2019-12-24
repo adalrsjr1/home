@@ -52,10 +52,13 @@ set splitbelow
 " spell checking
 set complete+=kspell
 autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
-"autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell spelllang=en_us
-"autocmd BufNewFile,BufRead *.tex, set syntax spell toplevel spelllang=en_us
-autocmd FileType tex set spell spelllang=en_us
-autocmd FileType txt set spell spelllang=en_us
+autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_us
+autocmd BufNewFile,BufRead *.mkd setlocal spell spelllang=en_us
+autocmd BufNewFile,BufRead *.markdown setlocal spell spelllang=en_us
+autocmd BufNewFile,BufRead *.tex set syntax spell toplevel spelllang=en_us
+"autocmd FileType *.tex set spell spelllang=en_us
+"autocmd FileType *.txt set spell spelllang=en_us
+"autocmd FileType *.md set spell spelllang=en_us
 
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
@@ -72,6 +75,9 @@ set spellfile=~/.vim/spellfile.add
 au BufNewFile,BufRead *.tex
     \ set formatoptions+=t | " auto wrapline
 
+au BufNewFile,BufRead *.md
+    \ set formatoptions+=t | " auto wrapline
+
 " python configuration
 au BufNewFile,BufRead *.py
     \ set tabstop=4        |
@@ -80,7 +86,8 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79     |
     \ set expandtab        |
     \ set autoindent       |
-
+    \ set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p |
+    \ set errorformat=%f:%l:\ %m |
 " antlr grammar syntax configuration
 " https://github.com/dylon/vim-antlr
 au BufRead,BufNewFile *.g set filetype=antlr3
@@ -136,7 +143,6 @@ nnoremap <leader>p :bprevious<CR>:redraw<CR>:ls<CR><CR>
 
 " mapping make key
 nnoremap <leader>m :w<CR>:make<CR>
-
 " mapping vertical split
 nnoremap <leader>% :vsp<Space>
 

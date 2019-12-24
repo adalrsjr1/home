@@ -21,22 +21,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export GOPATH=$HOME/Coding/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export GO111MODULE=on
-
-export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/istio/bin
-export PATH=$PATH:$HOME/Coding/kubeadm-dind-cluster/helm
-
-export CLASSPATH=".:$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
-
-alias antlr4="java -jar $HOME/.local/lib/antlr-4.7.2-complete.jar"
-alias grun="java org.antlr.v4.gui.TestRig"
-
-export PATH=$PATH:/opt/GoLand/bin
-export PATH=$PATH:/opt/minishift
-source $HOME/.minishift-completion
-source $HOME/.oc-completion
-
-export PATH=$PATH:/opt/crc
-eval $(crc oc-env)
+PATH=$PATH:$HOME/Library/Python/3.7/bin
