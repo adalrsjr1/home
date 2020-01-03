@@ -196,16 +196,11 @@ command! MakeTags !ctags -R .
 " use g^] to show all tags
 " use ^t to jump back
 
-" http://ctrlpvim.github.io/ctrlp.vim/#installation
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-"let g:ctrlp_working_path_mode = 'ra'
-"let g:ctrlp_show_hidden = 1 " show hidden files
-"let g:ctrlp_root_markers = ['pom.xml']
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir': '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll|pdf|png|jpg|jpeg|zip|bz2|gz|jar|rar|7z)$',
-"  \ }
+" autocomplete
+" ^x^n for just file
+" ^x^f for filenames
+" ^x^] for tags only
+" ^n or ^p for anything specified by the complete option
 
 " syntax highlight for Vue
 " git clone https://github.com/posva/vim-vue.git ~/.vim/pack/plugins/start/vim-vue
