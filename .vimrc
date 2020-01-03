@@ -153,12 +153,11 @@ nnoremap <leader>" :sp<Space>
 " mapping clipboard copy/paste
 " first check it vim supports clipboard
 "   :echo has('clipboard')
-" if 0, install vim-gnome or vim-gtk
+" if 0, install vim-gnome or vim-gtk or MacVim
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 nnoremap <leader>Y "*y
 nnoremap <leader>P "*p
-
 
 " open explorer
 nnoremap <leader><TAB> :Texplore<CR>
@@ -179,16 +178,34 @@ nnoremap <leader>t :tabedit<Space> %:h/
 :hi TabLineSel ctermfg=White ctermbg=LightGreen cterm=bold
 :hi TabLine ctermfg=Black ctermbg=LightGreen cterm=NONE
 
+" finding files
+" search down on into subfolders
+" provides tab completion
+set path+=**
+" open buffer search
+nnoremap <leader>l :b 
+" open file search
+nnoremap <leader>L :find
+" display all matching files when use tab
+set wildmenu
+
+" tag jumping
+" should install ctags through homebrew
+command! MakeTags !ctags -R .
+" use ^] to jump to a tag under curson
+" use g^] to show all tags
+" use ^t to jump back
+
 " http://ctrlpvim.github.io/ctrlp.vim/#installation
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1 " show hidden files
-let g:ctrlp_root_markers = ['pom.xml']
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|pdf|png|jpg|jpeg|zip|bz2|gz|jar|rar|7z)$',
-  \ }
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_show_hidden = 1 " show hidden files
+"let g:ctrlp_root_markers = ['pom.xml']
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir': '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll|pdf|png|jpg|jpeg|zip|bz2|gz|jar|rar|7z)$',
+"  \ }
 
 " syntax highlight for Vue
 " git clone https://github.com/posva/vim-vue.git ~/.vim/pack/plugins/start/vim-vue
