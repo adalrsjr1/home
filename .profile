@@ -22,3 +22,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 PATH=$PATH:$HOME/Library/Python/3.7/bin
+PATH=$PATH:/Users/adalbertoibm.com/.gem/ruby/2.6.0/bin
