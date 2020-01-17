@@ -135,6 +135,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias vim="`brew --prefix`/bin/nvim"
 alias dc="docker-compose"
 alias ls='ls -G'
+alias pactivate='source .venv/bin/activate'
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
