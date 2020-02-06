@@ -1,58 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" python autocomplete
-Plugin 'davidhalter/jedi-vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" https://dougblack.io/words/a-good-vimrc.html
-
-" begin jedi-python
-" https://github.com/davidhalter/jedi-vim
-let g:jedi#force_py_version = 3
-set omnifunc=jedi#completions
-let g:jedi#show_call_signatures = "2"
-" end jedi-pytoh
 set nohlsearch
 set encoding=utf8               " set enconding to utf-8
 set ai                          " set auto-indenting on for programming
@@ -63,7 +8,7 @@ set laststatus=2                " make the last line where the status is two lin
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set nocompatible                " vi compatible is LAME
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
-colorscheme pablo " moonscape
+"colorscheme pablo " moonscape
 set t_Co=16                     " set vim to terminal's 16-colors
 set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
@@ -77,10 +22,24 @@ set noswapfile
 set nobackup
 set fileformat=unix
 
+" remap esc
+inoremap jk <Esc>
+" Note: In command mode mappings to esc run the command for some odd
+" historical vi compatibility reason. We use the alternate method of
+" existing which is Ctrl-C
+cnoremap jk <Esc> <C-C>
+" timeout between keystrokes
+set timeoutlen=1000 ttimeoutlen=0
+
+
+" visual selection color
+:hi Visual cterm=underline,bold ctermbg=None
+
 " highlight cursor
 set cursorline
-:hi CursorColumn cterm=inverse,bold " ctermbg=darkred ctermfg=None guibg=darkred guifg=white
-:hi CursorLine cterm=bold"ctermbg=None ctermfg=None "ctermbg=darkgray ctermbg=darkgray guibg=darkgray guifg=darkgray
+:hi CursorColumn cterm=reverse,bold " ctermbg=darkred ctermfg=None guibg=darkred guifg=white
+:hi CursorLine cterm=bold
+
 " \c to locate the cursor
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
@@ -172,6 +131,19 @@ au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
 " insert timestamp
 nnoremap <leader>r :r !date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR><CR>
 
+" Status Line {
+        set laststatus=2                             " always show statusbar
+        set statusline=
+        set statusline+=%-10.3n\                     " buffer number
+        set statusline+=%f\                          " filename
+        set statusline+=%h%m%r%w                     " status flags
+        set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+        set statusline+=%=                           " right align remainder
+        set statusline+=0x%-8B                       " character value
+        set statusline+=%-14(%l,%c%V%)               " line, character
+        set statusline+=%<%P                         " file position
+"}
+
 " move through splits
 nnoremap <leader>j <C-w>j
 nnoremap <leader>l <C-w>l
@@ -201,6 +173,11 @@ nnoremap <leader>% :vsp<Space>
 
 " mapping horizontal split
 nnoremap <leader>" :sp<Space>
+" split horizontally current buffer
+nnoremap <leader>' :sp<Cr>
+
+" reload .vimrc
+nnoremap <leader>r :w<Cr> :source ~/.vimrc<Cr>
 
 " https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
 " mapping clipboard copy/paste
@@ -218,25 +195,25 @@ nnoremap <leader>e :Vexplore<CR>
 nnoremap <leader>E :Hexplore<CR>
 
 " handling tabs
-nnoremap <leader>t <C-w>T               " move widow to tab
+nnoremap <leader>t :tabedit %<CR>       " move widow to tab
 nnoremap <leader><CR> :tabnext<CR>      " go to next tab
 nnoremap <leader><Bs> :tabprevious<CR>  " go to previous tab
 nnoremap <leader>q :q<CR>               " close tab
 nnoremap <leader>s :w<CR>               " save tab
 " open file into new tab
-nnoremap <leader>t :tabedit<Space> %:h/
+nnoremap <leader>T :tabedit<Space> %:h/
 
 " customizing tabs
 :hi TabLineFill ctermfg=DarkGreen ctermbg=LightGreen
-:hi TabLineSel ctermfg=White ctermbg=LightGreen cterm=bold
-:hi TabLine ctermfg=Black ctermbg=LightGreen cterm=NONE
+:hi TabLineSel ctermfg=Black ctermbg=White cterm=bold,reverse
+:hi TabLine ctermfg=Black ctermbg=DarkGreen
 
 " finding files
 " search down on into subfolders
 " provides tab completion
 set path+=**
 " open buffer search
-nnoremap <leader>l :b 
+nnoremap <leader>l :br
 " open file search
 nnoremap <leader>L :find
 " display all matching files when use tab
