@@ -1,0 +1,10 @@
+from sys import stdin
+
+def nextline():
+    return int(stdin.readline())
+
+while True:
+    try:
+
+    except:
+        break

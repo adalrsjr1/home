@@ -120,6 +120,9 @@ au BufNewFile,BufRead *.html
 
 " python configuration
 au BufNewFile,BufRead **/contests/**/*.py
+    \ map <F2> :0r ~/.vimsnippets/pythoncontest <CR> |
+
+au BufNewFile,BufRead *.py
     \ map <F2> :0r ~/.vimsnippets/python <CR> |
 
 " highlight bad whitespaces
