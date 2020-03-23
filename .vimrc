@@ -1,3 +1,63 @@
+"
+" https://github.com/junegunn/vim-plug
+"
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'rhysd/vim-grammarous'
+
+" " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+" Plug 'junegunn/vim-easy-align'
+"
+" " Any valid git URL is allowed
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"
+" " Multiple Plug commands can be written in a single line using | separators
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"
+" " On-demand loading
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"
+" " Using a non-master branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"
+" " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+" Plug 'fatih/vim-go', { 'tag': '*' }
+"
+" " Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"
+" " Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+" " Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+
+" Initialize plugin system
+call plug#end()
+
+" Grammarous Plugin Customization
+nnoremap <leader>g :GrammarousCheck<CR>
+let g:grammarous#hooks = {}
+function! g:grammarous#hooks.on_check(errs) abort
+    nmap <buffer><leader><Right>  <Plug>(grammarous-move-to-next-error)
+    nmap <buffer><leader><Left>   <Plug>(grammarous-move-to-previous-error)
+    nmap <buffer><leader><Down>   <Plug>(grammarous-fixit) \| <Plug>(grammarous-close-info-window)<CR>
+    nmap <buffer><leader><Up>     <Plug>(grammarous-close-info-window)<CR>
+
+endfunction
+
+function! g:grammarous#hooks.on_reset(errs) abort
+    nunmap <buffer><leader><Right>
+    nunmap <buffer><leader><Left>
+    nunmap <buffer><leader><Up>
+    nunmap <buffer><leader><Down>
+endfunction
+
 set nohlsearch
 set encoding=utf8               " set enconding to utf-8
 set ai                          " set auto-indenting on for programming
@@ -16,7 +76,7 @@ syntax on                       " turn syntax highlighting on by default
 set nu
 set smartindent
 set autoindent
-set tw=70
+set tw=80
 set formatoptions-=t            " avoid wrap line while writing
 set noswapfile
 set nobackup
@@ -67,7 +127,7 @@ autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
 autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_us
 autocmd BufNewFile,BufRead *.mkd setlocal spell spelllang=en_us
 autocmd BufNewFile,BufRead *.markdown setlocal spell spelllang=en_us
-autocmd BufNewFile,BufRead *.tex set syntax spell toplevel spelllang=en_us
+autocmd BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
 "autocmd FileType *.tex set spell spelllang=en_us
 "autocmd FileType *.txt set spell spelllang=en_us
 "autocmd FileType *.md set spell spelllang=en_us

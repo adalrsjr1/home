@@ -25,3 +25,4 @@ PATH=$PATH:$HOME/Library/Python/3.7/bin
 PATH=$PATH:/Users/adalbertoibm.com/.gem/ruby/2.6.0/bin
 PATH=$PATH:/Users/adalbertoibm.com/Coding/wlp/bin
 WLP_HOME=/Users/adalbertoibm.com/Coding/wlp
+source <(kubectl completion bash)
