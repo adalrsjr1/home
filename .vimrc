@@ -121,6 +121,10 @@ set foldlevel=99
 set splitright
 set splitbelow
 
+" wrapping and unwrapping paragraphs
+nnoremap <Leader>w gqip
+nnoremap <Leader>W vipJ
+
 " spell checking
 set complete+=kspell
 autocmd BufRead COMMIT_EDITMSG setlocal spell spelllang=en_us
