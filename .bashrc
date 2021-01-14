@@ -133,7 +133,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 alias ctags="`brew --prefix`/bin/ctags"
-alias vim="`brew --prefix`/bin/nvim"
+VIM="`brew --prefix`/bin/nvim"
+alias vim="$VIM"
 alias dc="docker-compose"
 alias ls='ls -G'
 alias pactivate='source .venv/bin/activate'
@@ -179,7 +180,7 @@ fi
 # to avoid VIM hang out after accidentally press CRTL+S
 stty -ixon
 
-export VISUAL=vim
+export VISUAL=$VIM
 export EDITOR="$VISUAL"
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
