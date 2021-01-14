@@ -21,13 +21,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-
-PATH=$PATH:$HOME/Library/Python/3.7/bin
-PATH=$PATH:/Users/adalbertoibm.com/.gem/ruby/2.6.0/bin
 PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:/Users/adalbertoibm.com/Coding/wlp/bin
+PATH=$PATH:$HOME/Coding/wlp/bin
 
 GOPATH=$(go env GOPATH)
 PATH=$PATH:$(go env GOPATH)/bin
-WLP_HOME=/Users/adalbertoibm.com/Coding/wlp
+WLP_HOME=$HOME/Coding/wlp
 source <(kubectl completion bash)
