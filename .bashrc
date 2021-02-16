@@ -135,6 +135,7 @@ fi
 alias ctags="`brew --prefix`/bin/ctags"
 VIM="`brew --prefix`/bin/nvim"
 alias vim="$VIM"
+alias vi="$VIM"
 alias dc="docker-compose"
 alias ls='ls -G'
 alias pactivate='source .venv/bin/activate'
