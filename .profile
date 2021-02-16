@@ -21,6 +21,8 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+KUBECONFIG=$HOME/.kube/config:$HOME/.kube/trinity01/trinity01:$HOME/.kube/trxrhel7perf-1/trxrhel7perf-1
+
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$HOME/Coding/wlp/bin
 
