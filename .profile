@@ -26,6 +26,7 @@ KUBECONFIG=$HOME/.kube/config:$HOME/.kube/trinity01/trinity01:$HOME/.kube/trxrhe
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$HOME/Coding/wlp/bin
 
+GO111MODULE="on"
 GOPATH=$(go env GOPATH)
 PATH=$PATH:$(go env GOPATH)/bin
 WLP_HOME=$HOME/Coding/wlp

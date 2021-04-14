@@ -4,10 +4,10 @@
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
-Plug 'rhysd/vim-grammarous'
+"Plug 'rhysd/vim-grammarous'
 
 " " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 " Plug 'junegunn/vim-easy-align'
@@ -38,7 +38,7 @@ Plug 'rhysd/vim-grammarous'
 " Plug '~/my-prototype-plugin'
 
 " Initialize plugin system
-call plug#end()
+"call plug#end()
 
 " Grammarous Plugin Customization
 nnoremap <leader>g :GrammarousCheck<CR>
