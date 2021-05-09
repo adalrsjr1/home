@@ -3,9 +3,10 @@
   email = adalrsjr1@gmail.com
 [color]
   ui = true
+[format]
+  pretty = oneline
+[init]
+  defaultBranch = "master"
 [alias]
   ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
   graph = "log --oneline --graph --decorate --all"
-[format]
-  pretty = oneline
-
