@@ -183,4 +183,22 @@ LS_COLORS='rs=0:di=00;34:ln=00;36:mh=00:pi=40;33:so=00;35:do=00;35:bd=40;33;01:c
 #export LS_COLORS
 export LC_NUMERIC="en_US.UTF-8"
 
+# install pyenv
+if [ ! -d $HOME/.pyenv ]; then
+  # https://realpython.com/intro-to-pyenv/
+  curl https://pyenv.run | bash
+fi
 
+ln -sf $($HOME/.local/bin/pyenv which python) $HOME/.local/bin/python
+eval "$($HOME/.local/bin/pyenv virtualenv-init -)"
+
+
+# Check SDKMAN installation
+if [ ! -d $HOME/.sdkman ]; then
+  # install
+  curl -s "https://get.sdkman.io" | bash
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
