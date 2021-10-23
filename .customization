@@ -15,3 +15,9 @@ password: enpass
 
 # tmux.ressurrect
 # see .tmux.conf
+
+# python manager
+https://realpython.com/intro-to-pyenv/
+
+# java manager
+https://sdkman.io/install
