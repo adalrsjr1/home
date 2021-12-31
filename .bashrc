@@ -187,12 +187,33 @@ export LC_NUMERIC="en_US.UTF-8"
 if [ ! -d $HOME/.pyenv ]; then
   # https://realpython.com/intro-to-pyenv/
   curl https://pyenv.run | bash
+  ln -sf $HOME/.pyenv/bin/pyenv $HOME/.local/bin/pyenv
 fi
 
-ln -sf $($HOME/.local/bin/pyenv which python) $HOME/.local/bin/python
-eval "$($HOME/.local/bin/pyenv virtualenv-init -)"
+ln -sf $($HOME/.pyenv/bin/pyenv which python) $HOME/.local/bin/python
+eval "$($HOME/.pyenv/bin/pyenv virtualenv-init -)"
 
+function cd() {
+  builtin cd "$@"
 
+  if [[ -z "$VIRTUAL_ENV" ]] ; then
+    ## If env folder is found then activate the vitualenv
+      if [[ -d ./.venv ]] ; then
+        source ./.venv/bin/activate
+      fi
+  else
+    ## check the current folder belong to earlier VIRTUAL_ENV folder
+    # if yes then do nothing
+    # else deactivate
+      parentdir="$(dirname "$VIRTUAL_ENV")"
+      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+        deactivate
+      fi
+  fi
+}
+
+source <(kubectl completion bash)
+source <(minikube completion bash)
 # Check SDKMAN installation
 if [ ! -d $HOME/.sdkman ]; then
   # install
