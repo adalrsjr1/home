@@ -1,64 +1,3 @@
-"
-" https://github.com/junegunn/vim-plug
-"
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-"call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-"Plug 'rhysd/vim-grammarous'
-
-" " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
-"
-" " Any valid git URL is allowed
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-"
-" " Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-"
-" " On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"
-" " Using a non-master branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-"
-" " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-" Plug 'fatih/vim-go', { 'tag': '*' }
-"
-" " Plugin options
-" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-"
-" " Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"
-" " Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
-
-" Initialize plugin system
-"call plug#end()
-
-" Grammarous Plugin Customization
-" https://github.com/rhysd/vim-grammarous
-" nnoremap <leader>g :GrammarousCheck<CR>
-" let g:grammarous#hooks = {}
-" function! g:grammarous#hooks.on_check(errs) abort
-"     nmap <buffer><leader><Right>  <Plug>(grammarous-move-to-next-error)
-"     nmap <buffer><leader><Left>   <Plug>(grammarous-move-to-previous-error)
-"     nmap <buffer><leader><Down>   <Plug>(grammarous-fixit) \| <Plug>(grammarous-close-info-window)<CR>
-"     nmap <buffer><leader><Up>     <Plug>(grammarous-close-info-window)<CR>
-"
-" endfunction
-"
-" function! g:grammarous#hooks.on_reset(errs) abort
-"     nunmap <buffer><leader><Right>
-"     nunmap <buffer><leader><Left>
-"     nunmap <buffer><leader><Up>
-"     nunmap <buffer><leader><Down>
-" endfunction
-
 set nohlsearch                  " stop highlight all searches
 set encoding=utf8               " set enconding to utf-8
 set ai                          " set auto-indenting on for programming
@@ -162,8 +101,10 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79     |
     \ set expandtab        |
     \ set autoindent       |
-    \ set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p |
+    "\ set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p |
+    \ set makeprg=source\ .venv/bin/activate\ &&\ python\ %|
     \ set errorformat=%f:%l:\ %m |
+
 " antlr grammar syntax configuration
 " https://github.com/dylon/vim-antlr
 au BufRead,BufNewFile *.g set filetype=antlr3
@@ -301,6 +242,3 @@ command! MakeTags !ctags -R .
 " ^x^f for filenames
 " ^x^] for tags only
 " ^n or ^p for anything specified by the complete option
-
-" syntax highlight for Vue
-" git clone https://github.com/posva/vim-vue.git ~/.vim/pack/plugins/start/vim-vue
