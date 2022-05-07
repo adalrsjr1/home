@@ -172,7 +172,8 @@ if ! shopt -oq posix; then
 fi
 
 if [[ ! $TERM =~ screen ]]; then
-  exec tmux
+  # reuse the same session '0' for every new terminal created
+  exec tmux new-session -A -s 0
 fi
 
 # to avoid VIM hang out after accidentally press CRTL+S
@@ -193,24 +194,27 @@ fi
 ln -sf $($HOME/.pyenv/bin/pyenv which python) $HOME/.local/bin/python
 eval "$($HOME/.pyenv/bin/pyenv virtualenv-init -)"
 
-function cd() {
-  builtin cd "$@"
+#function cd() {
+#  builtin cd "$@"
+#
+#  if [[ -z "$VIRTUAL_ENV" ]] ; then
+#    ## If env folder is found then activate the vitualenv
+#      if [[ -d ./.venv ]] ; then
+#        source ./.venv/bin/activate
+#      fi
+#  else
+#    ## check the current folder belong to earlier VIRTUAL_ENV folder
+#    # if yes then do nothing
+#    # else deactivate
+#      parentdir="$(dirname "$VIRTUAL_ENV")"
+#      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+#        deactivate
+#      fi
+#  fi
+#}
 
-  if [[ -z "$VIRTUAL_ENV" ]] ; then
-    ## If env folder is found then activate the vitualenv
-      if [[ -d ./.venv ]] ; then
-        source ./.venv/bin/activate
-      fi
-  else
-    ## check the current folder belong to earlier VIRTUAL_ENV folder
-    # if yes then do nothing
-    # else deactivate
-      parentdir="$(dirname "$VIRTUAL_ENV")"
-      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
-        deactivate
-      fi
-  fi
-}
+# enable fn keys
+echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode 2>&1 > /dev/null
 
 source <(kubectl completion bash)
 source <(minikube completion bash)
