@@ -11,5 +11,13 @@
   ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
   graph = "log --oneline --graph --decorate --all"
   commit = "commit -S"
+[diff]
+  tool = nvimdiff
+[difftool]
+  prompt = false
+[merge]
+  tool = nvimdiff
+[mergetool]
+  prompt = false
 [credential]
   helper = store
