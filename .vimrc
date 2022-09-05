@@ -93,6 +93,14 @@ au BufNewFile,BufRead *.tex
 au BufNewFile,BufRead *.md
     \ set formatoptions+=t | " auto wrapline
 
+" insert date
+" https://vim.fandom.com/wiki/Insert_current_date_or_time
+" format: ISO8601 + two breaklines
+nnoremap <F5> "=strftime('# %FT%T%z%n%n')<CR>P
+inoremap <F5> <C-R>=strftime('# %FT%T%z%n%n')<CR><CR>
+
+"    \ nnoremap <F2> :r !date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR><CR> | " insert timestamp
+
 " python configuration
 au BufNewFile,BufRead *.py
     \ set tabstop=4        |
@@ -135,10 +143,6 @@ highlight BadWhitespace cterm=inverse,bold
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$\| \+\ze\t/
 au BufRead,BufNewFile *.* match BadWhitespace /\s\+$\| \+\ze\t/
 au Syntax * syn match BadWhitespace /\s\+$\| \+\ze\t/
-
-" insert timestamp
-nnoremap <leader>r :r !date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR><CR>
-
 " Status Line {
         set laststatus=2                             " always show statusbar
         set statusline=
