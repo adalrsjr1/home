@@ -1,0 +1,14 @@
+# /etc/cron.daily/system-update
+#!/bin/sh
+
+DATE="$(date +%F-%T)"
+
+if [ ! -e "/tmp/dnf_update-$DATE.log" ]; then
+    echo -e "UPDATING...\n" > /tmp/dnf-update-"$DATE".log 
+    dnf update -y >> /tmp/dnf-update-"$DATE".log 2>&1 
+    echo -e "\nAUTO REMOVE...\n" >> /tmp/dnf-update-"$DATE".log 2>&1 
+    dnf autoremove -y >> /tmp/dnf-update-"$DATE".log 2>&1 
+    echo -e "\nCOMPLETE!" >> /tmp/dnf-update-"$DATE".log 2>&1 
+    exit 0
+fi
+exit 1

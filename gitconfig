@@ -1,0 +1,32 @@
+[core]
+    editor = /usr/bin/vim
+[user]
+    name = Adalberto Junior
+    email = adalrsjr1@gmail.com
+[format]
+    # Enhanced oneline format: [short-hash] [date] [author] (refs) [message]
+    pretty = "%C(yellow)%h %C(cyan)%cd %C(blue bold)%aN%C(auto)%d %Creset%s"
+[color]
+    ui = true
+[log]
+    data = relative
+    date = short
+    graph = true
+[init]
+    defaultBranch = "main"
+[alias]
+    ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+    graph = "log --oneline --graph --decorate --all"
+    commit = "commit -S"
+[diff]
+    tool = /usr/bin/vim
+[difftool]
+    prompt = false
+[merge]
+    tool = /usr/bin/vim
+[mergetool]
+    prompt = false
+[credential]
+    helper = store
+[url "git@gist.github.com:"]
+    pushinsteadof = https://gist.github.com/adalrsjr1/
