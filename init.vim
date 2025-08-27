@@ -1,4 +1,39 @@
 " ========================
+"    LSP CONFIGURATION
+" ========================
+" Keymaps are buffer-local and enabled when LSP attaches
+
+" Insert Mode:
+" <C-Space>      - Trigger LSP completion (omnifunc)
+" .,             - Alternative completion trigger
+
+" Normal Mode:
+" gD             - Jump to declaration
+" gd             - Jump to definition
+" gi             - Jump to implementation
+" <F2>           - Rename symbol (with LSP support)
+" <leader>f      - Format buffer asynchronously
+" <C-Space>      - Show hover documentation
+
+" Diagnostics:
+" [d             - Previous diagnostic
+" ]d             - Next diagnostic
+" <space>e       - Show diagnostic in floating window
+" <space>q       - Add diagnostics to location list
+
+" Help & Info:
+" <leader>?      - Open init.vim in split for reference"
+
+" ========================
+"       AUTOCOMPLETION
+" ========================
+" Insert mode completion commands:
+" <C-x><C-n> - Keyword completion
+" <C-x><C-f> - Filename completion
+" <C-x><C-]> - Tag completion
+" <C-n>/<C-p> - General completion navigation
+
+" ========================
 "       MAPPINGS
 " ========================
 let mapleader = "\\"                     " Leader key (Backslash)
@@ -13,7 +48,7 @@ vmap <leader>/ gc                        " Toggle comment (visual mode)
 inoremap jk <Esc>                        " Escape insert mode
 vnoremap jk <Esc>                        " Escape visual mode
 cnoremap jk <Esc>                        " Escape command mode
-set timeoutlen=200                       " Timeout between consecutive key hits
+set timeoutlen=300                       " Timeout between consecutive key hits
 
 " ========================
 "      CORE SETTINGS
@@ -93,3 +128,7 @@ set statusline+=%=                           " Right-align remainder
 set statusline+=0x%-8B                       " Current character value
 set statusline+=%-14(%l,%c%V%)               " Line/column position
 set statusline+=%<%P                         " File position percentage
+
+if has('nvim')
+    source ~/.config/nvim/lsp.lua
+endif
