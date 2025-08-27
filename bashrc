@@ -83,3 +83,10 @@ fi
 # add color to '$' sign, by default is has no color
 PS1="${PS1%\\\$*}${colorpre@P}${PROMPT_COLOR}${colorsuf@P}"'\$'"${colorreset@P}${PS1##*\$}"
 
+if [[ -d "/usr/local/go" ]]; then
+    export PATH="$PATH:/usr/local/go/bin"
+    go env -w GOPATH="$HOME/.go"
+    go env -w GOBIN="$(go env GOPATH)/bin"
+    export PATH="$PATH:$(go env GOBIN)"
+fi
+
