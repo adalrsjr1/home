@@ -112,6 +112,12 @@ set expandtab                   " Convert tabs to spaces
 set textwidth=120                " Line wrap column
 
 " ========================
+"     WINDOW MANAGEMENT
+" ========================
+set splitright                  " Vertical splits open right
+set splitbelow                  " Horizontal splits open below
+
+" ========================
 "   SYSTEM INTEGRATION
 " ========================
 set clipboard+=unnamedplus      " Sync with system clipboard
