@@ -97,7 +97,7 @@ Change theme to Oblivion theme.
     * cyan    = "#8CF8F7"
     * white   = "#9b9ea4"
 
-### Tmux
+## Tmux
 
 1. **Settings**: [`$HOME/.config/tmux/tmux.conf`](tmux.conf)
 2. Start a tmux session on bash login if no session exists.
@@ -105,6 +105,12 @@ Change theme to Oblivion theme.
 
 ## Bashrc
 **Settings**: [`$HOME/.bashrc`](bashrc)
+
+## Start Windows from Command Line
+
+```
+ln -sf [`$PWD/start_windows`](start_windows) /usr/local/bin
+```
 
 ## Grub HiDPI
 
