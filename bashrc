@@ -69,7 +69,7 @@ function prompt_command {
         if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
             git_branch="($ref*) " # dirty
         else
-            git_branch="(ref) "
+            git_branch="($ref) "
         fi
     else
         git_branch=""
