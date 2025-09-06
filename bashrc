@@ -36,7 +36,7 @@ HISTIGNORE="ls:ps:cd:history"
 # append history instead of overwriting
 shopt -s histappend
 # synchronize history across sessions
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r"
 
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
@@ -73,15 +73,13 @@ function prompt_command {
     # update terminal title
     echo -n -e "\e]0;${PWD}\a"
 }
-PROMPT_COMMAND="$PROMPT_COMMAND;prompt_command"
+PROMPT_COMMAND="$PROMPT_COMMAND; prompt_command"
 # add current git branch using same PROMPT_COLOR
 PROMPT_END='${colorpre@P}${PROMPT_COLOR}${colorsuf@P}${git_branch@P}${colorreset@P}'
 if [[ $TERM_PROGRAM != "vscode" ]]; then
     # add success/failed icon like vscode terminal
     PROMPT_END='${colorpre@P}$(if [ $? -eq 0 ]; then echo "34"; else echo "31"; fi)${colorsuf@P}● ${colorreset@P}'$PROMPT_END
 fi
-# add color to '$' sign, by default is has no color
-PS1="${PS1%\\\$*}${colorpre@P}${PROMPT_COLOR}${colorsuf@P}"'\$'"${colorreset@P}${PS1##*\$}"
 
 if [[ -d "/usr/local/go" ]]; then
     export PATH="$PATH:/usr/local/go/bin"
