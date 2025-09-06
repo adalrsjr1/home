@@ -63,10 +63,14 @@ PROMPT_DIRECTORY=""
 PROMPT_USERHOST=""
 PROMPT_SEPARATOR=""
 function prompt_command {
-    history -a
     ref=$(/usr/bin/git rev-parse --abbrev-ref HEAD 2> /dev/null)
     if [ -n "$ref" ]; then
-        git_branch="($ref) "
+        # check if working directory is dirty
+        if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
+            git_branch="($ref*) " # dirty
+        else
+            git_branch-"(ref) "
+        fi
     else
         git_branch=""
     fi
