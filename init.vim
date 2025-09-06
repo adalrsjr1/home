@@ -37,6 +37,7 @@
 "       MAPPINGS
 " ========================
 let mapleader = "\\"                     " Leader key (Backslash)
+nmap <leader>? :split $MYVIMRC<CR>
 
 " Code Formatting
 " ---------------
@@ -108,8 +109,8 @@ set tabstop=4                   " Visual tab width
 set softtabstop=4               " Spaces per tab in insert mode
 set shiftwidth=4                " Indent size for >>/<<
 set expandtab                   " Convert tabs to spaces
-"set formatoptions-=t            " Disable auto-text-wrapping (default: tcqj)
-set textwidth=120                " Line wrap column
+set formatoptions-=t            " Disable auto-text-wrapping (default: tcqj)
+set textwidth=120               " Line wrap column
 
 " ========================
 "     WINDOW MANAGEMENT
