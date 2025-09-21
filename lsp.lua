@@ -4,7 +4,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- use LspAttach autocommand to only map the follwing keys after the language
 -- server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
+autocmd('LspAttach', {
     callback = function(args)
         local opts = {buffer = args.buf}
         vim.bo[args.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- close Window Preview when popup is close
-vim.api.nvim_create_autocmd('CompleteDone', {
+autocmd('CompleteDone', {
     callback = function(args)
         if vim.fn.pumvisible() == 0 then
             vim.cmd.pclose()
@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd('CompleteDone', {
 vim.lsp.enable('gopls')
 
 
-vim.api.nvim_create_autocmd("LspAttach", {
+autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -79,4 +79,5 @@ vim.lsp.config('ruff', {
     }
 })
 vim.lsp.enable('ruff')
+
 

@@ -34,6 +34,15 @@
 " <C-n>/<C-p> - General completion navigation
 
 " ========================
+"         Plugins
+" ========================
+if has('nvim')
+    " load plugins earlier to avoid incompatibility
+    source ~/.config/nvim/plugins.lua
+endif
+
+
+" ========================
 "       MAPPINGS
 " ========================
 let mapleader = "\\"                     " Leader key (Backslash)
@@ -49,7 +58,7 @@ vmap <leader>/ gc                        " Toggle comment (visual mode)
 inoremap jk <Esc>                        " Escape insert mode
 vnoremap jk <Esc>                        " Escape visual mode
 cnoremap jk <Esc>                        " Escape command mode
-set timeoutlen=300                       " Timeout between consecutive key hits
+set timeoutlen=100                       " Timeout between consecutive key hits
 
 " ========================
 "      CORE SETTINGS
@@ -110,7 +119,7 @@ set softtabstop=4               " Spaces per tab in insert mode
 set shiftwidth=4                " Indent size for >>/<<
 set expandtab                   " Convert tabs to spaces
 set formatoptions-=t            " Disable auto-text-wrapping (default: tcqj)
-set textwidth=120               " Line wrap column
+set textwidth=0                 " Line wrap column
 
 " ========================
 "     WINDOW MANAGEMENT
@@ -139,3 +148,4 @@ set statusline+=%<%P                         " File position percentage
 if has('nvim')
     source ~/.config/nvim/lsp.lua
 endif
+
