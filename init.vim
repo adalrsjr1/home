@@ -131,7 +131,8 @@ set splitbelow                  " Horizontal splits open below
 "   SYSTEM INTEGRATION
 " ========================
 set clipboard+=unnamedplus      " Sync with system clipboard
-
+set path+=**                    " Search down into subfolders; use * for fuzzy search (:find <search>)
+set wildmenu                    " Display all matching files when we tab complete
 " ========================
 "      STATUS LINE
 " ========================
