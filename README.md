@@ -30,6 +30,25 @@ ln -s Dropbox/__desktop__ Desktop
 ln -s Dropbox/__phone__ Phone
 ```
 
+## [Onebox](https://github.com/abraunegg/onedrive/tree/master)
+
+```
+sudo dnf install onedrive
+```
+
+Create config file:
+```
+# $HOME/.config/onedrive/config
+skip_dir = "Attachments|backup|Desktop|Documentos|Pictures"
+```
+
+Enable `systemd` service
+
+```
+systemctl --user enable onedrive.service
+systemctl --user start onedrive.service
+```
+
 ## Desktop Bottom Bar
 
 1. right-click bar
